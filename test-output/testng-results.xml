@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13282" started-at="2019-03-18T13:34:25Z" finished-at="2019-03-18T13:34:38Z">
+  <suite name="Default suite" duration-ms="12007" started-at="2019-03-26T14:08:32Z" finished-at="2019-03-26T14:08:44Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13282" started-at="2019-03-18T13:34:25Z" finished-at="2019-03-18T13:34:38Z">
+    <test name="Default test" duration-ms="12007" started-at="2019-03-26T14:08:32Z" finished-at="2019-03-26T14:08:44Z">
       <class name="com.qa.hs.tests.LoginTest">
-        <test-method status="PASS" signature="beforetest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="beforetest" is-config="true" duration-ms="11398" started-at="2019-03-18T13:34:25Z" finished-at="2019-03-18T13:34:36Z">
+        <test-method status="PASS" signature="beforetest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="beforetest" is-config="true" duration-ms="9860" started-at="2019-03-26T14:08:32Z" finished-at="2019-03-26T14:08:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforetest -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="loginTest" duration-ms="1608" started-at="2019-03-18T13:34:36Z" finished-at="2019-03-18T13:34:38Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="loginTest" duration-ms="1835" started-at="2019-03-26T14:08:42Z" finished-at="2019-03-26T14:08:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="teardown" is-config="true" duration-ms="240" started-at="2019-03-18T13:34:38Z" finished-at="2019-03-18T13:34:38Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="teardown" is-config="true" duration-ms="273" started-at="2019-03-26T14:08:44Z" finished-at="2019-03-26T14:08:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

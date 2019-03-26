@@ -43,7 +43,7 @@ public class Base {
 	public Properties init_properties(){
 		prop = new Properties();
 		try {
-			FileInputStream ip = new FileInputStream("/Users/sarang.batra/eclipse-workspace/Keyword-Driven-Web-UI-Framework-master/Keyword-Driven-Web-UI-Framework-master"
+			FileInputStream ip = new FileInputStream("/Users/sarang.batra/github/Keyword-Driven-Web-UI-Framework-master"
 					+ "/src/main/java/com/qa/hs/keyword/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
