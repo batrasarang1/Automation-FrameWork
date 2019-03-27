@@ -67,21 +67,15 @@ public class KeyWordEngine {
 				  	String locatorValue = sheet.getRow(2).getCell(j).toString().trim();
 					String locatorType = sheet.getRow(3).getCell(j).toString().trim();
 					String value = sheet.getRow(i).getCell(j).toString().trim();
-
-				switch (locatorAction) {
-				
+		     
+							
+		    	switch (locatorAction) {
 				case "CLICK":
 		        	try {
-		        		if (locatorValue.contains("||")) {
-		           	    String[] split = locatorValue.split("\\|\\|");
-		           	    for(String str : split) {
-		           	    		System.out.println(str);	
-		           	    		}
-		           	    } else {
+		        		if(!"#SKIP#".equals(value)) {
 		           	    element=driver.findElement(getObject(prop, locatorValue, locatorType));
-				        element.click();
-		           	    	 }
-		           	    
+				        element.click(); 
+		        		}
 		             }catch (Exception e) {
 		                 System.out.println("Error with CLICK Action:" + e);
 		             }
@@ -89,9 +83,11 @@ public class KeyWordEngine {
 		            
 				case "CLEARSETTEXT":
 					try {
+						if(!"#SKIP#".equals(value)) {
 						element=driver.findElement(getObject(prop, locatorValue, locatorType));
 						element.clear();
 			           	element.sendKeys(value);
+						}
 					}catch (Exception e) {
 			              System.out.println("Error with SETTEXT Action:" + e);
 			        }
@@ -99,17 +95,21 @@ public class KeyWordEngine {
 					
 				case "MOUSEACTION":
 					try {
+						if(!"#SKIP#".equals(value)) {
 					 element = driver.findElement(getObject(prop, locatorValue, locatorType));
 					 Actions action = new Actions(driver);
 					action.moveToElement(element).click().build().perform();
+						}
 					}catch(Exception e) {
 			              System.out.println("Error with MOUSEACTION Action:" + e);
 					}
 					
 				case "GETTEXT":
 					try {
+						if(!"#SKIP#".equals(value)) {
 						element=driver.findElement(getObject(prop, locatorValue, locatorType));
 						element.getText().toString();
+						}
 					}catch (Exception e) {
 			              System.out.println("Error with GETTEXT Action:" + e);
 			        }
@@ -121,10 +121,12 @@ public class KeyWordEngine {
 						}catch (Exception e) {
 							System.out.println("Error with SETPARAM Action:" + e);
 						}
-						
-			 default:
+						break;
+			    default:
 					break;
-				}
+		    //	}
+			}
+				
 			} catch (Exception e) {
 				System.out.println("Error with Action:" );
 				 e.printStackTrace();
@@ -132,8 +134,9 @@ public class KeyWordEngine {
 
 		}
 				}
+				}
 			}
-    }
+    
 	
 	    public By getObject(Properties prop,String locatorValue,String locatorType) throws Exception{
 	    	

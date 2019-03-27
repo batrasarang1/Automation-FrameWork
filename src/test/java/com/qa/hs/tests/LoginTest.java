@@ -35,7 +35,7 @@ public class LoginTest {
 	@Test
 	public void loginTest(){
 	keyWordEngine = new KeyWordEngine();
-    keyWordEngine.startExecution("PMC_PORTAL", driver , prop);
+    keyWordEngine.startExecution("AMAZON", driver , prop);
 	}
 	
 	@AfterTest
