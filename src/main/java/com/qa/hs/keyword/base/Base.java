@@ -26,7 +26,6 @@ public class Base {
 		if(browserName.equals("CHROME")){
 			System.setProperty("webdriver.chrome.driver", "C:\\Work\\Softwares_Setup\\Chrome Browser\\chromedriver.exe");
 			if(prop.getProperty("HEADLESS").equals("YES")){
-				
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--headless");
 				driver = new ChromeDriver(options);

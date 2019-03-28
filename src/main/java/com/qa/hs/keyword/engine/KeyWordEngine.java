@@ -1,6 +1,6 @@
 package com.qa.hs.keyword.engine;
 
-
+import java.util.List;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,11 +22,10 @@ import org.openqa.selenium.interactions.Actions;
 import com.qa.hs.keyword.base.Base;
 
 
-/**
- * 
- * @author Sarang.Batra
- *
- */
+/** 
+ **   @author Sarang.Batra
+ **/
+
 public class KeyWordEngine {
 
 	public static Workbook book;
@@ -37,6 +36,7 @@ public class KeyWordEngine {
 
 	public Base base;
 	public WebElement element;
+	
 
 	public void startExecution(String sheetName, WebDriver driver, Properties prop) {
 		FileInputStream file = null;
@@ -122,9 +122,21 @@ public class KeyWordEngine {
 							System.out.println("Error with SETPARAM Action:" + e);
 						}
 						break;
+						
+				case "COUNTITEMS":
+					try {
+						if(!"#SKIP#".equals(value)) {
+							List<WebElement> countItems = driver.findElements(getObject(prop, locatorValue, locatorType));
+					        System.out.println("Total number of banners on home page are : " + countItems.size());
+						}
+					}catch (Exception e) {
+						System.out.println("Error with COUNTITEMS Action:" + e);
+					}
+					
+					break;
 			    default:
 					break;
-		    //	}
+		   
 			}
 				
 			} catch (Exception e) {
