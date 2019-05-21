@@ -15,10 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  *
  */
 public class Base {
-	
-	
-	
-	
+
 	public WebDriver driver;
 	public Properties prop;
 	

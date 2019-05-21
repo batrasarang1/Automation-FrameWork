@@ -4,6 +4,8 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -21,6 +23,7 @@ public class LoginTest {
 	public static Base base;
 	public static Properties prop;
 	public static WebDriver driver;
+		
 	
 	@BeforeTest
 	public void beforetest() {
@@ -35,12 +38,35 @@ public class LoginTest {
 	@Test
 	public void loginTest(){
 	keyWordEngine = new KeyWordEngine();
-    keyWordEngine.startExecution("AMAZON", driver , prop);
+    keyWordEngine.startExecution("PMC_PORTAL", driver , prop);
 	}
+	
+	@AfterMethod
+	public void writeResult(ITestResult result)
+    {
+        try
+     {
+            if(result.getStatus() == ITestResult.SUCCESS)
+            {
+            	System.out.println("\nLog Message:: Test Cases has Passed");    
+            }
+            else if(result.getStatus() == ITestResult.FAILURE)
+            {
+                 System.out.println("\nLog Message:: Test Cases has Failed");
+               
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nLog Message::");
+            e.printStackTrace();
+        }
+    }
 	
 	@AfterTest
 	public void teardown() {
 		driver.close();
-	
 	}
+	 
+    
 }

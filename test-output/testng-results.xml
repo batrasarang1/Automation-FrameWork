@@ -2,20 +2,31 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30545" started-at="2019-03-28T11:09:48Z" finished-at="2019-03-28T11:10:18Z">
+  <suite name="Default suite" duration-ms="14873" started-at="2019-05-20T06:47:22Z" finished-at="2019-05-20T06:47:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30545" started-at="2019-03-28T11:09:48Z" finished-at="2019-03-28T11:10:18Z">
+    <test name="Default test" duration-ms="14873" started-at="2019-05-20T06:47:22Z" finished-at="2019-05-20T06:47:37Z">
       <class name="com.qa.hs.tests.LoginTest">
-        <test-method status="PASS" signature="beforetest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="beforetest" is-config="true" duration-ms="12828" started-at="2019-03-28T11:09:48Z" finished-at="2019-03-28T11:10:01Z">
+        <test-method status="PASS" signature="beforetest()[pri:0, instance:com.qa.hs.tests.LoginTest@3bfdc050]" name="beforetest" is-config="true" duration-ms="10718" started-at="2019-05-20T06:47:22Z" finished-at="2019-05-20T06:47:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforetest -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="loginTest" duration-ms="15569" started-at="2019-03-28T11:10:01Z" finished-at="2019-03-28T11:10:16Z">
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.qa.hs.tests.LoginTest@3bfdc050]" name="loginTest" duration-ms="1748" started-at="2019-05-20T06:47:33Z" finished-at="2019-05-20T06:47:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hs.tests.LoginTest@42d80b78]" name="teardown" is-config="true" duration-ms="2104" started-at="2019-03-28T11:10:16Z" finished-at="2019-03-28T11:10:18Z">
+        <test-method status="PASS" signature="writeResult(org.testng.ITestResult)[pri:0, instance:com.qa.hs.tests.LoginTest@3bfdc050]" name="writeResult" is-config="true" duration-ms="3" started-at="2019-05-20T06:47:34Z" finished-at="2019-05-20T06:47:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest()[pri:0, instance:com.qa.hs.tests.LoginTest@3bfdc050] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- writeResult -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.qa.hs.tests.LoginTest@3bfdc050]" name="teardown" is-config="true" duration-ms="2356" started-at="2019-05-20T06:47:34Z" finished-at="2019-05-20T06:47:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

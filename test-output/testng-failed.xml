@@ -7,7 +7,7 @@
         <methods>
           <include name="beforetest"/>
           <include name="loginTest"/>
-          <include name="teardown"/>
+          <include name="writeResult"/>
         </methods>
       </class> <!-- com.qa.hs.tests.LoginTest -->
     </classes>
