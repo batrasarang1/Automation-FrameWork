@@ -40,7 +40,6 @@ public class KeyWordEngine {
 	String splitelement;
 	
 
-/* -------------------------------------------------------------  */
 	
 	public void startExecution(String sheetName, WebDriver driver, Properties prop) {
 		FileInputStream file = null;
@@ -98,9 +97,8 @@ public class KeyWordEngine {
 					break;
 					
 				case "SETPARAM":
-					try {
-					locatorValue = prop.setProperty(prop.getProperty(locatorValue), row.getCell(j).toString()).toString();
-					
+					try {			
+					prop.setProperty(prop.getProperty(locatorValue), row.getCell(j).toString());
 					}catch (Exception e) {
 						System.out.println("Error with SETPARAM Action:" + e);
 					}
@@ -109,8 +107,12 @@ public class KeyWordEngine {
 				case "MOUSEACTION":
 					try {
 						if(!"#SKIP#".equals(value)) {
-						Actions action = new Actions(driver);
-						action.moveToElement(element).moveToElement(relatedElement).click().build().perform();	
+							Actions action = new Actions(driver);
+							Thread.sleep(1000);
+							relatedElement= driver.findElement(By.xpath(prop.getProperty("HOVER_TICKET")));
+							action.moveToElement(relatedElement).perform();
+							element = driver.findElement(getObject(prop, locatorValue, locatorType));
+							element.click();
 						}
 					}catch(Exception e) {
 			              System.out.println("Error with MOUSEACTION Action:" + e);
@@ -168,7 +170,7 @@ public class KeyWordEngine {
     }
 }
     
-/* -------------------------------------------------------------  */
+
 	   public String getObjects(Properties prop,String locatorValue) throws Exception{
 	     return prop.getProperty(locatorValue).toString();
 	   }
@@ -179,8 +181,7 @@ public class KeyWordEngine {
 		 if(locatorType.equalsIgnoreCase("XPATH") ){
 			 if(locatorValue.contains("||")){
 		        	split = locatorValue.split("\\|\\|");
-		        	
-					splitelement = getObjects(prop, split[0]);
+		        	splitelement = getObjects(prop, split[0]);
 					splitrelatedElements = getObjects(prop, split[1]);
 					prop.setProperty(split[1], splitrelatedElements.replace(split[0] , splitelement));
 					locatorValue=split[1];
